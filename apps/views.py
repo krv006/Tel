@@ -8,8 +8,8 @@ from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 
 from root.settings import DEFAULT_FROM_EMAIL
-from .models import Contact, Image
-from .serializers import ContactSerializer, AddModelSerializer
+from apps.models import Contact, Image
+from apps.serializers import ContactSerializer, AddModelSerializer
 
 
 @extend_schema(tags=['Contacts'])
@@ -39,6 +39,6 @@ class ContactView(CreateAPIView):
 
 
 @extend_schema(tags=['Add'])
-class AddModelCreateApiView(CreateAPIView):
+class ImageCreateAPIView(CreateAPIView):
     queryset = Image.objects.all()
     serializer_class = AddModelSerializer
